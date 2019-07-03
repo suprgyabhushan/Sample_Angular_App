@@ -1,0 +1,260 @@
+.articlefont-small{
+font-size: 30px;
+}
+.controls {
+    margin-bottom: 20px;
+}
+.page-header {
+    margin-top: 20px;
+}
+
+.sidebar {
+	display: block;
+	position: fixed;
+	width:30%;
+	align-content: left;
+	padding: 2%;
+    float: left;
+}
+
+.sidebarright {
+	display: block;
+	position: fixed;
+	width:30%;
+	align-content: left;
+	padding: 2%;
+    float: left;
+}
+
+.button{
+       padding: .1em .5em; /* Control your width and height here! */
+       font-size: 1em;
+   }
+
+ul {
+    list-style: none;
+}
+
+.box {
+    z-index: 99;
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.box1 {
+    height: 100%;
+
+    background-color: #fff;
+}
+.box-header {
+    background-color: #eee;
+    padding: 0 30px 0 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: move;
+    position: relative;
+}
+.box1-header {
+    background-color: #eee;
+    padding: 0 30px 0 10px;
+
+    cursor: move;
+    position: relative;
+}
+.box-header h3 {
+    margin-top: 10px;
+    display: inline-block;
+}
+.box1-header h3 {
+    margin-top: 10px;
+    display: inline-block;
+}
+.box-content {
+    padding: 10px;
+}
+.box1-content {
+    padding: 10px;
+}
+.box-header-btns {
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+}
+.box1-header-btns {
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+}
+a {
+    color: #ccc;
+}/*bin and settings on gridster widget*/
+form {
+    margin-bottom: 0;
+}
+
+/*
+.gridster {
+    border: 1px solid #ccc;
+    margin:8em 0.4em;
+    overflow-x: visible;
+    overflow-y: scroll;
+    height:42em !important;
+    width:25em;
+    padding: 20px;
+    margin-right: 10px;
+    float: left
+    border-style: groove;
+    border-width: 15px;
+    border-radius: 25px
+}
+*/
+
+.output{
+
+}
+
+.output-frame{
+    background: url("http://www.bryangula.com/img/iphoneFrame.png");
+    background-size: cover;
+    display: block;
+}
+
+.btn-new {
+    /*padding: .2em .2em; /* Control your width and height here! */*/
+    opacity: 0.7;
+    min-height: 6em !important;
+    min-width: 6em !important;
+    border-radius: 0.6em;
+    border: 1px solid #33C3F0;
+    font-size: .7em;
+    line-height: 3em;
+    margin:0.2em;
+}
+
+.btn{
+    padding: 8.5px 12px;
+}
+
+
+.btn-warning{
+    background-color: transparent;
+    color: #333;
+    border-color: #000;
+}
+
+.btn-removeFile{
+    margin-right: 10px;
+
+}
+
+.glyphicon-lg{
+    /*padding-top: .2em;*/
+    font-size: 2em;
+    vertical-align: middle;
+}
+
+.glyphicon-wrng{
+    padding-top: .2em;
+    font-size: 2.7em;
+    vertical-align: middle;
+}
+
+.myOutput {
+    background: url("output.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    /*width: 100%;
+    height: 100%;*/
+    width: 22em !important;
+    height: 46em !important;
+    padding-top: 10px;
+    padding-left: 25px;
+    overflow:hidden;
+}
+
+.scrollable{
+    background: url("whitebackground.jpg");
+    background-size: contain;
+    border: 1px solid #ccc;
+    margin:5.9em -0.1em;
+    overflow-x: visible;
+    overflow-y: scroll;
+    height:32.3em !important;
+    width:19.29em;
+    padding: 0;
+    margin-right: 10px;
+    float: left
+    /*border-style: groove;
+    border-width: 15px;
+    border-radius: 25px*/
+}
+
+.table, tr{
+    /*max-height: 5px !important;*/
+}
+
+.table, td{
+    border-bottom-width: 0px;
+    padding: 0px !important;
+}
+
+.modal-dialog{
+  width: 60%;
+}
+.ql-toolbar{
+  border-bottom: 1px solid #ccc;
+}
+.ql-editor{
+  min-height: 300px ;
+}
+
+.glyphicon-cog{
+    z-index: 8675309;
+}
+
+.glyphicon-trash{
+    z-index: 8675309;
+}
+
+.glyphicon-ph{
+    font-size: 4em;
+    vertical-align: middle;
+    padding-top: .4em;
+    padding-bottom: .225em;
+    color: lightgrey;
+}
+.placeholder{
+    font-size: 1.9em;
+    color: lightgrey;
+}
+.overlay_fix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+    }
+
+.fix1{
+    position:relative;
+    margin:0 auto;
+    float: left;
+}
+.fix2{
+    position:relative;
+    margin:0 auto;
+    float: right;
+}
+
+iframe {
+    width:100%;
+    height:100%;
+    border:0;
+    position:relative;
+
+}
+
+/*#draggable { width: 150px; height: 150px; padding: 0.5em; }*/
+/*#inner{width:80px;height:50px;}*/

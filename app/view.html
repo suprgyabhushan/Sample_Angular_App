@@ -1,0 +1,93 @@
+</div>
+<div class="row" >
+	<!--<div class="row">
+		<div class="sidebar two columns">
+			<a class=" button button-primary btn-new" ng-click="addWidget1()"><i class="glyphicon glyphicon-picture glyphicon-lg"></i><br>Image</a>
+			<a class=" button button-primary btn-new" ng-click="addWidget2()"><i class="glyphicon glyphicon-facetime-video glyphicon-lg"></i><br>Video</a>
+		</div>
+	</div>-->
+	<div class="sidebar one coloumns" style="z-index:1" >
+		<left>
+		<!--<div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="val1" jqyoui-draggable="{animate: true, placeholder: 'keep', deepCopy: true}" ng-show="val1.type" ng-click="addWidget1()">{{val1.type}}</div>-->
+
+		<table border="0" width="10%" class="buttons" cellspacing="10" cellpadding="10" >
+			<tr>
+        <td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[0]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[0])" title="Image"><i class="glyphicon glyphicon-picture glyphicon-lg"></i><br/><small>Image</small></a></td>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[1]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[1])" title="Video"><i class="glyphicon glyphicon-facetime-video glyphicon-lg"></i><br/><small>Video</small></a></td>
+			</tr>
+			<tr>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[2]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[2])" title="Textbox"><i class="glyphicon glyphicon-edit glyphicon-lg"></i><br/><small>Text</small></a></td>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[3]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[3])" title="Slider"><i class="glyphicon glyphicon-film glyphicon-lg"></i><br/><small>Slider</small></a></td>
+			</tr>
+			<tr>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[4]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[4])" title="Custom"><i class="glyphicon glyphicon-tags glyphicon-lg"></i><br/><small>Custom</small></a></td>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[5]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[5])" title="Custom"><i class="glyphicon glyphicon-pause glyphicon-lg"></i><br/><small>Divider</small></a></td>
+			</tr>
+			<tr>
+				<td><a class=" button button-primary btn-new" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="widgets[6]" jqyoui-draggable="{placeholder: 'keep', deepCopy: true}" ng-click="pushWidget(widgets[6])" title="Sample"><i class="glyphicon glyphicon-link glyphicon-lg"></i><br/><small>Sample</small></a></td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr/></td>
+			</tr>
+			<tr>
+				<td><a class=" button btn-new btn-success" ng-click="compileOutput()" title="Output"><i class="glyphicon glyphicon-download-alt glyphicon-lg"></i><br/><small>Output</small></a></td>
+				<td><a class=" button btn-new btn-success" ng-click="saveDashboardLayout()" title="Save"><i class="glyphicon  glyphicon glyphicon-floppy-save glyphicon-lg"></i><br/><small>Save</small></a></td>
+			</tr>
+			<tr>
+			<!--<td><a class=" button btn-new btn-success" ng-click="loadDashboardLayout()" title="Load"><i class="glyphicon glyphicon glyphicon-folder-open glyphicon-lg"></i><br/><small>Save Files</small></a></td>-->
+			<td><a class=" button btn-new btn-success" ng-click="OpenLayout()" title="Load"><i class="glyphicon glyphicon glyphicon-folder-open glyphicon-lg"></i><br/><small>Open</small></a></td>
+			<td><a class=" button btn-new btn-warning" ng-click="clear()" title="Clear"><i class="glyphicon glyphicon-trash glyphicon-lg" ></i><br/><small>Clear</small></a></td>
+
+			<label>
+        <input type="radio" name="state" value="play" ng-model="State">Play
+    	</label>
+    	<label>
+      	<input type="radio" name="state" value="drag" ng-model="State" >Drag
+    	</label>
+			</tr>
+		</table>
+	</left>
+</div>
+<!--
+<div data-drop="true" jqyoui-droppable style="border:2px dotted;min-height:100px;min-width:80px;float:right;">
+</div>
+
+
+    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="dashboard.widgets" jqyoui-droppable style='height:50px;'>
+    </div> -->
+
+
+
+	<div class="offset-by-four five columns myOutput">
+		<div data-drop="true" ng-model="dashboard.widgets" jqyoui-droppable="{multiple:true,deepCopy:true}" class= "scrollable">
+			<div gridster="gridsterOptions">
+				<div gridster-item="widget" class="box" ng-repeat="widget in dashboard.widgets" ng-controller="CustomWidgetCtrl" data="{{ widget.sizeX * 2 | columns}}">
+					<div gridster-dynamic-height widget = "widget">
+						<div ng-if="widget.data.length<=0 || widget.data===undefined">
+
+							<div class="box-header-btns pull-right">
+								<a title="settings" nd-hide="widget.data===undefined" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+								<a title="Remove widget" ng-click="remove(widget)"><i class="glyphicon glyphicon-trash"></i></a>
+							</div>
+    					<a style="text-decoration : none" ng-click="openSettings1(widget)">
+								<center>
+									<ng-include src="'app/templates/'+widget.type+'/placeholder.html'"></ng-include>
+								</center>
+							</a>
+
+						</div>
+						<div ng-if="widget.data">
+							<div class="box-header-btns pull-right">
+								<a title="settings" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+								<a title="Remove widget" ng-click="remove(widget)"><i class="glyphicon glyphicon-trash"></i></a>
+							</div>
+							<a style="text-decoration : none" ng-click="openSettings1(widget)">
+								<ng-include src="'app/templates/'+widget.type+'/template.html'"></ng-include>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

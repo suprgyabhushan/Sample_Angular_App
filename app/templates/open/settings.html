@@ -1,0 +1,24 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Open</h3>
+
+            <div class="modal-body">
+            <div class="form-group" ng-class="{error: _form.url.$error && _form.submitted}">
+                <!--<label class="control-label col-lg-3 col-md-3">Select old Project: </label><p></p>
+                <div class="col-lg-9 col-md-9">
+                  <ul>
+                  <li ng-repeat="file in widget.files"><p>{{file.name}}</p> <a ng-click="loadFile(file.name)" class="btn btn-primary btn-removeFile">Open</a><a ng-click="removeSlide2($index)" class="btn btn-primary btn-removeFile">Remove File</a><li>
+                  </ul>
+              </div>-->
+              <div class="col-lg-9 col-md-9">
+                  <label>Select old Project: </label><input type="file" name="projectFile" id="projectFile" accept=".json">
+              </div>
+           </div>
+           <div class="modal-footer">
+                <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+                <a ng-click="loadFile()" class="btn btn-primary btn-removeFile">Open</a>
+           </div>
+    </form>
+</div>

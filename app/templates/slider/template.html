@@ -1,0 +1,18 @@
+<ks-swiper-container initial-slide="3"loop="false" show-nav-buttons="false" slides-per-view="1" space-between="5" pagination-clickable="false" resize-event:"auto" swiper="swiper" on-ready="onReadySwiper(swiper)">
+  <ks-swiper-slide class="swiper-slide" ng-repeat="slide in widget.data">
+    <div ng-switch on="slide.type">
+      <div ng-switch-when="image">
+        <img width="100%" height="100%" src="{{ slide.url |  trustURL}}">
+      </div>
+      <div ng-switch-when="video">
+        <iframe width="100" height="100" ng-src="{{ slide.url | GetYouTubeID }}" frameborder="0"></iframe>
+      </div>
+    </div>
+  </ks-swiper-slide>
+
+
+</ks-swiper-container>
+<div ng-show="widget.data.length">
+<a class="fix1" ng-click="previous()" align="left" href="previous()">Previous</a>
+<a class="fix2" ng-click="next()" align="right" href="next()">Next</a>
+</div>

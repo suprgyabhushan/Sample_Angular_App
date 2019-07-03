@@ -1,0 +1,73 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Slider Settings</h3>
+        </div>
+            <center></center>
+            <div class="modal-body">
+            <div class="form-group" ng-class="{error: _form.url.$error && _form.submitted}">
+                    <label class="col-lg-10">Write the URL and type and then click on "Add Slide" and then on "Save"</label>
+                <!--<div ng-repeat="slide in form.slides">-->
+                <div class="col-lg-9 col-md-9">
+                    <p>
+                    <input name="url" type="text" ng-model="form.url" placeholder="Enter URL of image/video" required/>
+                    <a ng-click="addSlide()" class="btn btn-primary" ng-disabled="_form.url.$dirty &&  _form.url.$invalid || _form.type{{index}}.$dirty &&  _form.type{{index}}.$invalid">Add Slide</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-9 col-md-9">
+
+                    <label class = "control-label">
+                        Select Type
+                    </label>
+                    <div class="radio">
+
+                        <label>
+                            <input type="radio" name="choice" value="image" ng-model="form.type1">
+                            Image </p>
+                        </label>
+                        <label>
+                           <input type="radio" name="choice" value="video" ng-model="form.type1">
+                            Video
+                        </label>
+                    </div>
+
+                </p>
+                </div>
+
+
+                <!--</div>-->
+
+
+                <div ng-repeat="slide in form.data">
+                    <div class="col-lg-9 col-md-9">
+                        <li> <b>URL: {{slide.url}} </b></p>
+                        <b>Type: {{slide.type}} </b> </li>
+                        <a ng-click="removeSlide1($index)" class="btn btn-primary">Remove Slide</a>
+                        Edit Slide <input type="checkbox" ng-model="checked" ng-init="checked=false" /><br/>
+                        <div ng-if="checked" class="animate-if">
+                            <form novalidate class="simple-form"></p>
+                                <p>
+                                    URL: <input type="text" ng-model="slide.url" />
+                                    Type: <input type="radio" ng-model="slide.type" value="image" />image
+                                    <input type="radio" ng-model="slide.type" value="video" />video
+                                </p>
+                            </form>
+                        </div><br>
+
+                    </div>
+                 </div><br>
+
+
+                 </div>
+            </div>
+
+            <div class="modal-footer">
+                <button ng-click="reset()" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Reset</button>
+                <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+                <button ng-click="submit()" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Save</button>
+            </div>
+    </form>
+</div>

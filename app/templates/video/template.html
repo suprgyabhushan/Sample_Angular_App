@@ -1,0 +1,9 @@
+<div id="draggable" style="position:relative;">
+  <iframe ng-src="{{ widget.data | GetYouTubeID }}"></iframe>
+  <!-- <div ng-if="State=='play'">
+  <div style="position: absolute; z-index: -10;width:100%; height:100%;top:0;left:0"></div>
+  </div> -->
+  <div ng-if="State=='drag'">
+  <div style="position: absolute; z-index: 99;width:90%; height:90%;top:0; margin:10px"></div>
+  </div>
+</div>
